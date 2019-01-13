@@ -1,0 +1,5 @@
+ResourceGroupName = "RG-UKCloudInfra-Dev"
+ResourceGroupLocation = "West Europe"
+StorageAccountName = "functionsappsa47398"
+AppServicePlanName = "ConsumptionPlanASP"
+FunctionAppName = "AzureDurableFunction1-Dev"
