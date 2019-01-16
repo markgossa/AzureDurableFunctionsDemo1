@@ -12,7 +12,7 @@ namespace AzureDurableFunctionsDemo1
     {
         [FunctionName("OrchestratorStarter")]
         public static async Task<HttpResponseMessage> HttpStart(
-            [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post")]HttpRequestMessage req,
+            [HttpTrigger(AuthorizationLevel.Function, "get", "post")]HttpRequestMessage req,
             [OrchestrationClient]DurableOrchestrationClient starter,
             ILogger log)
         {
