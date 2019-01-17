@@ -40,12 +40,12 @@ steps:
 - task: CmdLine@2
   displayName: Terraform Init
   inputs:
-    script: terraform init -input=false -backend=false Deployment\Terraform
+    script: terraform init -input=false -backend=false deployment\terraform
 
 - task: CmdLine@2
   displayName: Terraform Validate (DEV)
   inputs:
-    script: terraform validate -var-file="Deployment\Terraform\envDev.tfvars" -var client_id=test -var client_secret=test -var tenant_id=test -var subscription_id=test -var FunctionAppName=test Deployment\Terraform
+    script: terraform validate -var-file="deployment\terraform\envDev.tfvars" -var client_id=test -var client_secret=test -var tenant_id=test -var subscription_id=test -var FunctionAppName=test deployment\terraform
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts: App'
@@ -56,5 +56,5 @@ steps:
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifacts: Terraform'
   inputs:
-    pathtoPublish: 'Deployment\Terraform'
+    pathtoPublish: 'deployment\terraform'
     ArtifactName: 'terraform'
