@@ -1,8 +1,7 @@
 ﻿using Microsoft.Azure.WebJobs;
 using System.Threading.Tasks;
-using AzureDurableFunctionsDemo1.Models;
 
-namespace AzureDurableFunctionsDemo1
+namespace AzureDurableFunctionsDemo1.Functions
 {
     public class Orchestrator
     {
@@ -12,7 +11,6 @@ namespace AzureDurableFunctionsDemo1
         {
             string output = null;
             string name = context.GetInput<string>();
-            //string name = userInfo.Name;
             output = await context.CallActivityAsync<string>("HelloActivity", name);
             return output;
         }

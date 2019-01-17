@@ -3,7 +3,6 @@ using System.Threading.Tasks;
 using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.Extensions.Logging;
-using AzureDurableFunctionsDemo1.Functions;
 using AzureDurableFunctionsDemo1.Models;
 
 namespace AzureDurableFunctionsDemo1
