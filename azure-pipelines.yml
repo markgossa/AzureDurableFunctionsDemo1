@@ -20,7 +20,7 @@ steps:
   displayName: Test
   inputs:
     command: 'test'
-    packagesToPack: '**/*[Tt]ests/*.csproj'
+    packagesToPack: '**/*[Tt]ests*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
