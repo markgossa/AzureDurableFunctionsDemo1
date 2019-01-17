@@ -27,7 +27,7 @@ steps:
   displayName: Publish
   inputs:
     command: 'publish'
-    packagesToPack: '**/*.csproj'
+    packagesToPack: '**/AzureDurableFunctionsDemo1.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(build.ArtifactStagingDirectory)'
     zipAfterPublish: true
     publishWebProjects: false
