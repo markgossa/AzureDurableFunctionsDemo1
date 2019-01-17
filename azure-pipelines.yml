@@ -20,7 +20,7 @@ steps:
   displayName: Test
   inputs:
     command: 'test'
-    packagesToPack: '**/*[Tt]ests*.csproj'
+    packagesToPack: '**/AzureDurableFunctionsDemo1.Tests.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
