@@ -16,12 +16,12 @@ steps:
     packagesToPack: '**/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
-#- task: DotNetCoreCLI@2
-#  displayName: Test
-#  inputs:
-#    command: 'test'
-#    packagesToPack: '**/AzureDurableFunctionsDemo1.Tests.csproj'
-#    arguments: '--configuration $(BuildConfiguration)'
+- task: DotNetCoreCLI@2
+  displayName: Test
+  inputs:
+    command: 'test'
+    packagesToPack: '**/AzureDurableFunctionsDemo1.Tests.csproj'
+    arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Publish
