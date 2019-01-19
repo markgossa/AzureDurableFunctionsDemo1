@@ -13,21 +13,22 @@ steps:
   displayName: Build
   inputs:
     command: 'build'
-    packagesToPack: '**/*.csproj'
+    projects: '**/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
 
 - task: DotNetCoreCLI@2
   displayName: Test
   inputs:
     command: 'test'
-    packagesToPack: '**/AzureDurableFunctionsDemo1.Tests.csproj'
+    projects: '**/*[Tt]ests/*.csproj'
     arguments: '--configuration $(BuildConfiguration)'
+    publishTestResults: true
 
 - task: DotNetCoreCLI@2
   displayName: Publish
   inputs:
     command: 'publish'
-    packagesToPack: '**/AzureDurableFunctionsDemo1.csproj'
+    projects: '**/AzureDurableFunctionsDemo1.csproj'
     arguments: '--configuration $(BuildConfiguration) --output $(build.ArtifactStagingDirectory)'
     zipAfterPublish: true
     publishWebProjects: false
